@@ -30,6 +30,9 @@ gem 'jbuilder'
 # Install rubocop [https://github.com/rubocop/rubocop]
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+# Add the Bootstrap gem
+gem 'bootstrap', '~> 5.0'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
