@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
-
-  resources :expense_groups
-  resources :groups, only: [:index, :create, :new, :destroy] do
-  resources :expenses
+  # get "/home/index"
+  resources :groups do
+    resources :expenses
   end
-  resources :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
-  root "users#index"
+  devise_for :users
+  devise_scope :user do
+    authenticated :user do
+      root 'groups#index', as: :authenticated_root_path
+    end
+    unauthenticated do
+      root "home#index", as: :unauthenticated_root_path
+    end
+  end
 end

@@ -1,7 +1,7 @@
 class Group < ApplicationRecord
-  belongs_to :author, class_name: 'User'
+  belongs_to :user, foreign_key: 'author_id'
   has_many :expense_groups
   has_many :expenses, through: :expense_groups
 
-  validates :icon, :name, presence: true
+  validates :name, :icon, presence: true
 end
