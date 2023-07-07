@@ -17,13 +17,14 @@
   </header>
 
   <div class="m-3">
-    <div class="mb-3">
-      <%= form.label :name, style: "display: block", class: "form-label" %>
-      <%= form.text_field :name, required: true, maxlength: "12", type: "text", class: "form-control", id: "formGroupExampleInput", placeholder: "Expense name" %>
-    </div>
-    <div class="mb-3">
-      <%= form.label :amount, style: "display: block", class: "form-label" %>
-      <%= form.number_field :amount, required: true, maxlength: "12", type: "text", class: "form-control", id: "formGroupExampleInput", placeholder: "Amount" %>
-    </div>
+  <div class="mb-3">
+  <%= form.label :name, "Expense name", style: "display: block", class: "form-label", for: "expense_name" %>
+  <%= form.text_field :name, required: true, maxlength: "12", type: "text", class: "form-control", id: "expense_name", placeholder: "Expense name" %>
+</div>
+<div class="mb-3">
+  <%= form.label :amount, "Amount", style: "display: block", class: "form-label", for: "expense_amount" %>
+  <%= form.number_field :amount, required: true, maxlength: "12", type: "text", class: "form-control", id: "expense_amount", placeholder: "Amount" %>
+</div>
+
   </div>
 <% end %>

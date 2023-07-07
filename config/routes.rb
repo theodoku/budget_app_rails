@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :user
-  resources :expense_groups
-  resources :groups, only: [:index, :create, :new, :destroy] do
-  resources :expenses
+  # get "/home/index"
+  resources :groups do
+    resources :expenses
   end
-  resources :users
- 
-  root "home#index"
-  get '/success-page', to: 'groups#index'
+  devise_for :users
+  devise_scope :user do
+    authenticated :user do
+      root 'groups#index', as: :authenticated_root_path
+    end
+    unauthenticated do
+      root "home#index", as: :unauthenticated_root_path
+    end
+  end
 end

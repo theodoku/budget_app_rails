@@ -1,9 +1,10 @@
 class GroupsController < ApplicationController
   def index
-    @groups = Group.where(author: current_user)
-    @expenses = Expense.where(author: current_user)
+    @groups = Group.where(author_id: current_user)
+    @expenses = Expense.where(author_id: current_user)
     @expense_groups = ExpenseGroup.all
     @form_submitted = params[:form_submitted] == 'true'
+    @group = @groups.sample if @groups.present?
   end
 
   def new
@@ -22,6 +23,6 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name, :icon, :user_id)
+    params.require(:group).permit(:name, :icon, :author_id)
   end
 end
