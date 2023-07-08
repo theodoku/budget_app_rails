@@ -1,0 +1,49 @@
+<div class="mx-auto md:w-2/3 w-full">
+  <%= form_with(model: @group, url: groups_path) do |f| %>
+    <header class="bg-primary text-white p-2">
+      <nav class="d-flex justify-content-between align-items-center text-center">
+        <%= link_to groups_path do %>
+          <i class="fa-solid fa-chevron-left"></i>
+          <span class="sr-only"></span>
+        <% end %>
+        <h2 class="m-0 p-0">New Category</h2>
+        <%= f.submit "Save", class: "nav-link fs-2" %>
+      </nav>
+    </header>
+
+    <% if @group.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+        <ul>
+          <% @group.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class='container py-4'>
+      <div class='container w-70'>
+      <%= f.label :icon, 'Select a category', class: 'fs-5 mb-2', for: 'icon' %>
+        <%= f.select :icon, options_for_select([
+          ['Education', 'education icon.png'],
+          ['Entertainment', 'entertainment.jpg'],
+          ['Food', 'food.jpg'],
+          ['Hospital', 'hospital icon.jpg'],
+          ['House', 'house icon.jpg'],
+          ['Personal Care', 'personal care.png'],
+          ['Saving', 'savings-icon.jpg'],
+          ['Transportation', 'travel-icon.jpg'],
+          ['Utilities', 'utility-icons.jpg']
+        ]), {}, class: 'form-select mb-4', id: 'icon', aria_label: "form-select category" %>
+
+        <%= f.hidden_field :author_id, value: current_user.id %>
+
+        <div>
+          <%= f.label :name, 'Name', class: 'form-label' %>
+          <%= f.text_field :name, class: 'form-control'%>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
