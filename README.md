@@ -68,7 +68,7 @@ Miscellaneous App is a mobile web application where you can manage your budget: 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Expense App]()
+[Expense App](https://sz-ino.onrender.com/)
 [Expense App Video Demo](https://www.loom.com/share/f88d28d47fef413d9eeaff005f59484e)
 
 <!-- GETTING STARTED -->
