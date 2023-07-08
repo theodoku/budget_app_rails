@@ -2,7 +2,8 @@ class ExpensesController < ApplicationController
   before_action :set_group
 
   def index
-    @expenses = @group.expenses.order(created_at: :desc)
+    @expenses = Expense.where(group_id: params[:group_id])
+    render :index
   end
 
   def new
