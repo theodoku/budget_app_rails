@@ -69,14 +69,7 @@ Miscellaneous App is a mobile web application where you can manage your budget: 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 [Expense App]()
-[Expense App Video Demo]()
-
-<h2  align="center">UML Diagram<h2>
- <div align="center">
-  <img src="./app/assets/images/entity_relationship_diagram.png" alt="diagram"  height="auto" />
- </div>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+[Expense App Video Demo](https://www.loom.com/share/f88d28d47fef413d9eeaff005f59484e)
 
 <!-- GETTING STARTED -->
 
