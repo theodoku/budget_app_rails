@@ -296,6 +296,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   bootstrap (~> 5.0)
+  bundler (~> 2.4.14)
   cancancan
   capybara
   debug
